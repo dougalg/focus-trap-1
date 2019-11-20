@@ -233,7 +233,7 @@ function focusTrap(element, userOptions) {
     if (container.contains(e.target)) return;
     if (config.clickOutsideDeactivates) {
       deactivate({
-        returnFocus: !tabbable.isFocusable(e.target)
+        returnFocus: config.returnFocusOnDeactivate && !tabbable.isFocusable(e.target)
       });
       return;
     }
